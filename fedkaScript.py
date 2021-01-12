@@ -12,7 +12,9 @@ class Game:
         self.game_active = False
         self.bird_movement = 0
         self.score = 0
-        self.high_score = 0
+        f = open('hs.txt')
+        self.high_score = int(f.readline())
+        f.close()
         self.screen = pygame.display.set_mode((576, 1024))
         self.clock = pygame.time.Clock()
         self.can_score = True
@@ -149,6 +151,9 @@ class Game:
     def events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                f = open('hs.txt', 'w')
+                f.write(str(self.high_score))
+                f.close()
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.KEYDOWN:

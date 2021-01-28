@@ -33,7 +33,7 @@ class Game:
         self.bird_index = 0
         self.bird_surface = self.bird_frames[self.bird_index]
         self.bird_rect = self.bird_surface.get_rect(center=(100, 512))
-        self.pipe_surface = pygame.image.load(cigaretka)
+        self.pipe_surface = pygame.image.load(pipe_red)
         self.pipe_surface = pygame.transform.scale2x(self.pipe_surface)
         self.pipe_list = []
         self.pipe_height = [400, 600, 800]
